@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NODE_JS'
+    }
+
     environment {
         REPO_DIR = "${env.WORKSPACE}"
         LOCAL_REGISTRY = "localhost:32000"
