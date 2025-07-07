@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         nodejs 'NODE_JS'
-    }
+    }
 
     environment {
         REPO_DIR = "${env.WORKSPACE}"
