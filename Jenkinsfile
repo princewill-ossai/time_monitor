@@ -8,6 +8,7 @@ pipeline {
     environment {
         REPO_DIR = "${env.WORKSPACE}"
         LOCAL_REGISTRY = "localhost:32000"
+        CI = 'false'
     }
 
     stages {
