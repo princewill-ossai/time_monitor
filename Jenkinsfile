@@ -17,7 +17,7 @@ pipeline {
                 checkout scm
                 script {
                     def gitUrl = sh(script: "git config --get remote.origin.url", returnStdout: true).trim()
-                    env.repoName = gitUrl.tokenize('/').last().replaceAll(/\\.git$/, '').replaceAll(/\\_/, '-')
+                    env.repoName = gitUrl.tokenize('/').last().replaceAll(/\\.git$/, '').replaceAll(/_/, '-')
                     echo "Repository Name: ${env.repoName}"
                 }
             }
