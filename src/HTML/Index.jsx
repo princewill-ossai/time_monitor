@@ -69,7 +69,7 @@ const Index = () => {
           </div>
         </div>
 
-        <Link to='/Watch_screen'><button>&larr;</button></Link>
+        <Link to='/watch-screen'><button>&larr;</button></Link>
       </main>
     </div>
   );

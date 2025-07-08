@@ -117,7 +117,7 @@ function Watch_screen() {
           </div>
         </div>
 
-        <Link to="/Index">
+        <Link to="/index">
           <button>&rarr;</button>
         </Link>
       </main>
