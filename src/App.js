@@ -10,9 +10,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/Index" element={<Index />} />
+        <Route path="/index" element={<Index />} />
         <Route
-          path="/Watch_screen"
+          path="/watch-screen"
           element={
             <div>
               {[...Array(numberOfStopwatches)].map((_, index) => (
