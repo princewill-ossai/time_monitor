@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
-  profileImg,
+  profileImg as defaultProfileImg,
   workIcn,
   playIcn,
   exerciseIcn,
@@ -86,12 +86,39 @@ function WatchBox({ label, icon, storageKey }) {
 
 // Main screen component
 function Watch_screen() {
+  const [profileImg, setProfileImg] = useState(defaultProfileImg);
+
+  const handleProfileImgChange = (e) => {
+    const file = e.target.files[0];
+    if (file && file.type.startsWith("image/")) {
+      setProfileImg(URL.createObjectURL(file));
+
+      // TODO: upload to backend if needed
+    }
+  };
+
   return (
     <div>
       <main>
         <div className="jeremy-info">
           <div className="Jeremy-div">
-            <img className="img-jeremy" src={profileImg} alt="" />
+            {/* Hidden file input */}
+            <input
+              type="file"
+              accept="image/*"
+              id="profilePhotoInput"
+              style={{ display: "none" }}
+              onChange={handleProfileImgChange}
+            />
+
+            {/* Clickable profile image */}
+            <img
+              className="img-jeremy cursor-pointer"
+              src={profileImg}
+              alt="Jeremy Robson"
+              onClick={() => document.getElementById("profilePhotoInput").click()}
+            />
+
             <div>
               <p>Report for</p>
               <h1>Jeremy Robson</h1>
